@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Net;
 using System.Net.Mail;
 using System.Reflection;
@@ -27,7 +28,7 @@ public class Email
         _senderEmailPassword= emailParams.SenderEmailPassword;
         _senderName= emailParams.SenderName;
     }
-    public void Send (string subject,string body,string to)
+    public async Task Send (string subject,string body,string to)
     {
         _mail = new MailMessage();
         _mail.From = new MailAddress(_senderEmail, _senderName);
@@ -46,5 +47,15 @@ public class Email
             UseDefaultCredentials = false,
             Credentials = new NetworkCredential(_senderEmail, _senderEmailPassword)
         };
+
+        _smtp.SendCompleted += OnSendCompleted;
+
+        await _smtp.SendMailAsync(_mail);
+    }
+
+    private void OnSendCompleted(object sender, AsyncCompletedEventArgs e)
+    {
+        _smtp.Dispose();
+        _mail.Dispose();
     }
 }
