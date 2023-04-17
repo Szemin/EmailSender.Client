@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ImailSender\ImailSender.csproj" />
+    <ProjectReference Include="..\ImailSender\EmailSender.csproj" />
   </ItemGroup>
 
 </Project>

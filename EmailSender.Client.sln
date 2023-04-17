@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSender.Client", "EmailSender.Client\EmailSender.Client.csproj", "{528EE13A-758F-404E-BEF7-D05CA18C809A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImailSender", "ImailSender\ImailSender.csproj", "{216ED8CC-2E00-4F25-A5E9-E5B97F3141E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSender", "ImailSender\EmailSender.csproj", "{216ED8CC-2E00-4F25-A5E9-E5B97F3141E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
