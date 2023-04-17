@@ -11,18 +11,18 @@ class Program
             HostSmtp = "smtp.gmail.com",
             Port = 587,
             EnableSsl= true,
-            SenderName = "WŁADCA GMAILA",
+            SenderName = "ja",
             SenderEmail = "szemintest@gmail.com",
             SenderEmailPassword = "ewccmfmueiqqxtbu"
         });
         Console.WriteLine("wysyłanie maila ...");
 
-        for (int i = 1; i <= 5; i++)
+        for (int i = 1; i <= 3; i++)
         {
             await email.Send(
                 "Email testowy z aplikacji",
-                "Przykładowy mail",
-                "szemintest@gmail.com");
+                "Nie wiem no",
+                "marzenakucharczyk0@gmail.com");
 
             Console.WriteLine("mail wysłano");
         }
