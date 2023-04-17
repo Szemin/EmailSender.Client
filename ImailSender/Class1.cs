@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Mail;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
@@ -35,5 +36,15 @@ public class Email
         _mail.BodyEncoding = System.Text.Encoding.UTF8;
         _mail.SubjectEncoding = System.Text.Encoding.UTF8;
         _mail.Body = body;
+
+        _smtp = new SmtpClient
+        {
+            Host = _hostSmtp,
+            EnableSsl = _enableSsl,
+            Port = _port,
+            DeliveryMethod = SmtpDeliveryMethod.Network,
+            UseDefaultCredentials = false,
+            Credentials = new NetworkCredential(_senderEmail, _senderEmailPassword)
+        };
     }
 }
