@@ -17,12 +17,12 @@ class Program
         });
         Console.WriteLine("wysyłanie maila ...");
 
-        for (int i = 1; i <= 3; i++)
+        for (int i = 1; i <= 5; i++)
         {
             await email.Send(
                 "Email testowy z aplikacji",
-                "Nie wiem no",
-                "marzenakucharczyk0@gmail.com");
+                "Przykładowy mail",
+                "szemintest@gmail.com");
 
             Console.WriteLine("mail wysłano");
         }
